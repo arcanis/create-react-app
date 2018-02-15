@@ -512,12 +512,7 @@ function checkNpmVersion() {
 }
 
 function checkNodeVersion(packageName) {
-  const packageJsonPath = path.resolve(
-    process.cwd(),
-    'node_modules',
-    packageName,
-    'package.json'
-  );
+  const packageJsonPath = require.main.resolve(packageName + '/package.json');
   const packageJson = require(packageJsonPath);
   if (!packageJson.engines || !packageJson.engines.node) {
     return;
