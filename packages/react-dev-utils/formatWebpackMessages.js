@@ -70,7 +70,8 @@ function formatMessage(message) {
       lines[1]
         .replace('Error: ', '')
         .replace('Module not found: Cannot find file:', 'Cannot find file:'),
-    ];
+    ],
+    ...lines.slice(2)
   }
 
   // Add helpful message for users trying to use Sass for the first time
